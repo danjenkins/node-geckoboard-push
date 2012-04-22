@@ -130,6 +130,55 @@ bar.send(items, orientation, function(response){
   //callback with response from geckoboard
 });
 ```
+Items is an Array of Objects
+```js
+[
+  {
+    label: "Revenue 2011 YTD",
+    sublabel: "(U.S. $ in thousands)",
+    axis: {
+      point: [
+        0,
+        200,
+        400,
+        600,
+        800,
+        1000
+      ]
+    },
+    range:[
+      { color: "red",
+        start: 0,
+        end: 400
+      },
+      {
+        color: "amber",
+        start: 401,
+        end: 700
+      },
+      { 
+        color: "green",
+        start: 701,
+        end: 1000
+      }
+    ],
+    measure: {
+      current: {
+        start: 0,
+        end: 500
+      },
+      projected: {
+        start: 100,
+        end: 900
+      }
+    },
+    comparative: {
+      point: 600
+    }
+  }
+]
+```
+Orientation is the orientation you'd like the bullet widgets, default is `horizontal`, but can be changed to `vertical`
 
 ###Rag Column###
 ```js
@@ -183,6 +232,11 @@ bar.send(items, settings, function(response){
 ##Examples##
 
 ```js
+
+var Geckoboard = require('geckoboard-push');
+
+var gecko = new Geckoboard({api_key: 'geckoboard_api_key'});
+
 var map = gecko.map('map_widget_key');
 map.send([
   { 
