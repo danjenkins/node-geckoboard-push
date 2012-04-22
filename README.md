@@ -50,7 +50,7 @@ Items is an Array of Objects
     },
     size: 8, /*Optional. Default = 3 */
     color: "d8f709", /*Optional. Hex color.*/
-    cssclass: "mycss" /*Optional. See example CSS below. */
+    cssclass: "mycss" /*Optional. Allows for custom CSS on the geckoboard dashboard */
   },
   {
     city: {
@@ -97,8 +97,8 @@ Items is an Array of Objects
   }
 ] 
 ```
-Absolute allows you to show numerical differences instead of Percentage based - defaults to `false`, can be set to true
-Type allows you to reverse the colours - defaults to `standard`, set to reverse or standard
+Absolute allows you to show numerical differences instead of Percentage based - defaults to `false`, can be set to `true`
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 ###Text###
 ```js
@@ -116,9 +116,9 @@ Items is an Array of Objects
 ]
 ```
 Type has three different values:
-* 0=None (no corner icon)
-* 1=Alert (yellow corner icon)
-* 2=Info (grey corner icon)
+* `0` - None (no corner icon)
+* `1` - Alert (yellow corner icon)
+* `2` - Info (grey corner icon)
 
 There can be up to 10 of these Objects
 The text can be plain or styled HTML
@@ -187,6 +187,24 @@ bar.send(items, type, function(response){
   //callback with response from geckoboard
 })
 ```
+Items is an array of Objects
+```js
+[
+  {
+    value: 120,
+    text: "Red description"
+  },
+  {
+    value: 75,
+    text: "Amber description"
+  },
+  {
+    value: 5,
+    text: "Green description"
+  }
+]
+```
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 ###Rag###
 ```js
@@ -195,6 +213,25 @@ bar.send(items, type, function(response){
   //callback with response from geckoboard
 })
 ```
+Items is an array of Objects
+```js
+[
+  {
+    value: 120,
+    text: "Red description"
+  },
+  {
+    value: 75,
+    text: "Amber description"
+  },
+  {
+    value: 5,
+    text: "Green description"
+  }
+]
+```
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+
 
 ###Funnel###
 ```js
@@ -203,6 +240,45 @@ foo.send(items, type, percentage, function(response){
   //callback with response from geckoboard
 })
 ```
+Items is an Array of Objects
+```js
+[
+  { 
+    value: "87809", 
+    label: "Step1" 
+  }, 
+  { 
+    value: "70022", 
+    label: "Step2" 
+  }, 
+  { 
+    value: "63232", 
+    label: "Step 3" 
+  }, 
+  { 
+    value: "53232", 
+    label: "Step 4" 
+  }, 
+  { 
+    value: "32123", 
+    label: "Step 5" 
+  }, 
+  { 
+    value: "23232", 
+    label: "Step 6" 
+  }, 
+  { 
+    value: "12232", 
+    label: "Step 7" 
+  }, 
+  { 
+    value: "2323", 
+    label: "Step 8" 
+  } 
+]
+```
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+Percentage allows you to show or hide % - defaults to `show`, set to `show` or `hide`
 
 ###Pie###
 ```js
@@ -211,6 +287,32 @@ bar.send(items, function(response){
   //callback with response from geckoboard
 })
 ```
+Items is an Array of Objects
+```js
+[ 
+  { 
+    value: "100", 
+    label: "May", 
+    colour: "FFFF10AA" 
+  }, 
+  { 
+    value: "160", 
+    label: "June", 
+    colour: "FFAA0AAA" 
+  }, 
+  { 
+    value: "300", 
+    label: "July", 
+    colour: "FF5505AA" 
+  }, 
+  { 
+    value: "140", 
+    label: "August", 
+    colour: "FF0000AA" 
+  } 
+]
+```
+The last 2 digits in the hex colour attribute are entirely optional and represent the desired transparency.
 
 ###Gecko Meter###
 ```js
@@ -219,6 +321,22 @@ bar.send(value, min, max, type, function(response){
   //callback with response from geckoboard
 })
 ```
+Value is the Value of the meter
+Min is an Object
+```js
+{
+  text : "Min value",
+  value : "10"
+}
+```
+Max is an Object
+```js
+{ 
+  text: "Max value",
+  value: "30"
+}
+```
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 ###Line###
 ```js
@@ -227,7 +345,48 @@ bar.send(items, settings, function(response){
   //callback with response from geckoboard
 })
 ```
-
+Items is an Array of values
+```js
+[
+  "12.3",
+  "2.3",
+  "10",
+  "15",
+  "15",
+  "13",
+  "12.1",
+  "9.8",
+  "12.3",
+  "2.3",
+  "10",
+  "15",
+  "15",
+  "13",
+  "12.1",
+  "9.8",
+  "11",
+  "16",
+  "15",
+  "13",
+  "10",
+  "7"
+]
+```
+Settings is an Object which contains x and y axis detail and colour detail in hex format
+```js
+{
+  "axisx": [
+    "Jun",
+    "Jul",
+    "Aug"
+  ],
+  "axisy": [
+    "Min",
+    "Max"
+  ],
+  "colour": "ff9900"
+}
+```
 
 ##Examples##
 
