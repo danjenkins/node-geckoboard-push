@@ -5,16 +5,9 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git://github.com/holidayextras/node-geckoboard-push.git"
+    "url": "git://github.com/danjenkins/node-geckoboard-push.git"
   },
   "main": "./index",
-  "scripts": {
-    "test": "make test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "utest": "0.0.3"
-  },
   "keywords": [
     "geckoboard",
     "geckoboard-push"
