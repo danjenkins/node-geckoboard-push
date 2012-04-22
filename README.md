@@ -1,12 +1,12 @@
-##geckoboard-push
+#geckoboard-push#
 
-##Install
+##Install##
 
 ```
 npm install geckoboard-push
 ```
 
-##Usage
+##Usage##
 
 ```js
 var Geckoboard = require('geckoboard-push');
@@ -14,22 +14,23 @@ var Geckoboard = require('geckoboard-push');
 var foo = new Geckoboard({api_key: 'geckoboard_api_key'});
 ```
 
-#Options
-#Required
+###Options###
+
+####Required####
 * **api_key** The key given to you in your account settings under API
-#Optional - should never need to be changed
+####Optional - should never need to be changed####
 * **params.host** defaults to push.geckoboard.com
 * **port** defaults to 443 for https
 * **method** defaults to POST
 * **path** defaults to '/v1/send/' + current_widget_key
 
-##Methods
+##Methods##
 
 Details of types can be found at geckoboards docs:
 http://docs.geckoboard.com/api/custom-widgets.html
 http://docs.geckoboard.com/api/custom-charts.html
 
-#Map
+###Map###
 ```js
 var bar = foo.map('map_widget_key');
 bar.send(items, function(response){
@@ -75,7 +76,7 @@ Items is an Array of Objects
 ]
 ```
 
-#Number
+###Number###
 ```js
 var bar = foo.number('number_widget_key');
 bar.send(items, absolute, type, function(response){
@@ -99,7 +100,7 @@ Items is an Array of Objects
 Absolute allows you to show numerical differences instead of Percentage based - defaults to `false`, can be set to true
 Type allows you to reverse the colours - defaults to `standard`, set to reverse or standard
 
-#Text
+###Text###
 ```js
 var bar = foo.text('text_widget_key');
 bar.send(items, function(response){
@@ -122,7 +123,7 @@ Type has three different values:
 There can be up to 10 of these Objects
 The text can be plain or styled HTML
 
-#Bullet
+###Bullet###
 ```js
 var bar = foo.bullet('bullet_widget_key');
 bar.send(items, orientation, function(response){
@@ -130,7 +131,7 @@ bar.send(items, orientation, function(response){
 });
 ```
 
-#Rag Column
+###Rag Column###
 ```js
 var bar = foo.ragColumn('rag_column_widget_key');
 bar.send(items, type, function(response){
@@ -138,7 +139,7 @@ bar.send(items, type, function(response){
 })
 ```
 
-#Rag
+###Rag###
 ```js
 var bar = foo.rag('rag_widget_key');
 bar.send(items, type, function(response){
