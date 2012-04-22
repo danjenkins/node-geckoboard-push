@@ -41,7 +41,7 @@ bar.send(items, function(response){
 })
 ```
 
-- Items is an Array of Objects
+Items is an Array of Objects
 
 ```js
 [
@@ -86,7 +86,7 @@ bar.send(items, absolute, type, function(response){
   //callback with response from geckoboard
 });
 ```
-- Items is an Array of Objects
+Items is an Array of Objects
 ```js
 [
   { 
@@ -100,8 +100,8 @@ bar.send(items, absolute, type, function(response){
   }
 ] 
 ```
-- Absolute allows you to show numerical differences instead of Percentage based - defaults to `false`, can be set to `true`
-- Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+Absolute allows you to show numerical differences instead of Percentage based - defaults to `false`, can be set to `true`
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 ###Text###
 ```js
@@ -110,7 +110,7 @@ bar.send(items, function(response){
   //callback with response from geckoboard
 });
 ```
-- Items is an Array of Objects
+Items is an Array of Objects
 ```js
 [
   {text: "message c", type : 0},
@@ -118,13 +118,13 @@ bar.send(items, function(response){
   {text : "message e", type : 1}
 ]
 ```
-- Type has three different values:
+Type has three different values:
 * `0` - None (no corner icon)
 * `1` - Alert (yellow corner icon)
 * `2` - Info (grey corner icon)
 
-- There can be up to 10 of these Objects
-- The text can be plain or styled HTML
+There can be up to 10 of these Objects
+The text can be plain or styled HTML
 
 ###Bullet###
 ```js
@@ -133,7 +133,7 @@ bar.send(items, orientation, function(response){
   //callback with response from geckoboard
 });
 ```
-- Items is an Array of Objects
+Items is an Array of Objects
 ```js
 [
   {
@@ -181,7 +181,7 @@ bar.send(items, orientation, function(response){
   }
 ]
 ```
-- Orientation is the orientation you'd like the bullet widgets, default is `horizontal`, but can be changed to `vertical`
+Orientation is the orientation you'd like the bullet widgets, default is `horizontal`, but can be changed to `vertical`
 
 ###Rag Column###
 ```js
@@ -190,7 +190,7 @@ bar.send(items, type, function(response){
   //callback with response from geckoboard
 })
 ```
-- Items is an array of Objects
+Items is an array of Objects
 ```js
 [
   {
@@ -207,7 +207,7 @@ bar.send(items, type, function(response){
   }
 ]
 ```
-- Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 ###Rag###
 ```js
@@ -216,7 +216,7 @@ bar.send(items, type, function(response){
   //callback with response from geckoboard
 })
 ```
-- Items is an array of Objects
+Items is an array of Objects
 ```js
 [
   {
@@ -233,7 +233,7 @@ bar.send(items, type, function(response){
   }
 ]
 ```
-- Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 
 ###Funnel###
@@ -243,7 +243,7 @@ foo.send(items, type, percentage, function(response){
   //callback with response from geckoboard
 })
 ```
-- Items is an Array of Objects
+Items is an Array of Objects
 ```js
 [
   { 
@@ -280,8 +280,8 @@ foo.send(items, type, percentage, function(response){
   } 
 ]
 ```
-- Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
-- Percentage allows you to show or hide % - defaults to `show`, set to `show` or `hide`
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+Percentage allows you to show or hide % - defaults to `show`, set to `show` or `hide`
 
 ###Pie###
 ```js
@@ -290,7 +290,7 @@ bar.send(items, function(response){
   //callback with response from geckoboard
 })
 ```
-- Items is an Array of Objects
+Items is an Array of Objects
 ```js
 [ 
   { 
@@ -315,7 +315,7 @@ bar.send(items, function(response){
   } 
 ]
 ```
-- The last 2 digits in the hex colour attribute are entirely optional and represent the desired transparency.
+The last 2 digits in the hex colour attribute are entirely optional and represent the desired transparency.
 
 ###Gecko Meter###
 ```js
@@ -324,22 +324,22 @@ bar.send(value, min, max, type, function(response){
   //callback with response from geckoboard
 })
 ```
-- Value is the Value of the meter
-- Min is an Object
+Value is the Value of the meter
+Min is an Object
 ```js
 {
   text : "Min value",
   value : "10"
 }
 ```
-- Max is an Object
+Max is an Object
 ```js
 { 
   text: "Max value",
   value: "30"
 }
 ```
-- Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
 
 ###Line###
 ```js
@@ -348,7 +348,7 @@ bar.send(items, settings, function(response){
   //callback with response from geckoboard
 })
 ```
-- Items is an Array of values
+Items is an Array of values
 ```js
 [
   "12.3",
@@ -375,7 +375,7 @@ bar.send(items, settings, function(response){
   "7"
 ]
 ```
-- Settings is an Object which contains x and y axis detail and colour detail in hex format
+Settings is an Object which contains x and y axis detail and colour detail in hex format
 ```js
 {
   "axisx": [
