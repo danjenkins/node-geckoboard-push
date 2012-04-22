@@ -29,8 +29,9 @@ var foo = new Geckoboard({api_key: 'geckoboard_api_key'});
 ##Methods##
 
 Details of types can be found at geckoboards docs:
-http://docs.geckoboard.com/api/custom-widgets.html
-http://docs.geckoboard.com/api/custom-charts.html
+
+* http://docs.geckoboard.com/api/custom-widgets.html
+* http://docs.geckoboard.com/api/custom-charts.html
 
 ###Map###
 ```js
