@@ -18,7 +18,8 @@ var foo = new Geckoboard({api_key: 'geckoboard_api_key'});
 
 ####Required####
 * **api_key** The key given to you in your account settings under API
-####Optional - should never need to be changed####
+####Optional####
+(These options should never need to be changed)
 * **params.host** defaults to push.geckoboard.com
 * **port** defaults to 443 for https
 * **method** defaults to POST
