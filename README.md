@@ -1,4 +1,4 @@
-#geckoboard-push
+##geckoboard-push
 
 ##Install
 
@@ -11,9 +11,177 @@ npm install geckoboard-push
 ```js
 var Geckoboard = require('geckoboard-push');
 
-var gecko = new Geckoboard({api_key: 'geckoboard_api_key'});
+var foo = new Geckoboard({api_key: 'geckoboard_api_key'});
+```
+
+#Options
+#Required
+* **api_key** The key given to you in your account settings under API
+#Optional - should never need to be changed
+* **params.host** defaults to push.geckoboard.com
+* **port** defaults to 443 for https
+* **method** defaults to POST
+* **path** defaults to '/v1/send/' + current_widget_key
+
+##Methods
+
+Details of types can be found at geckoboards docs:
+http://docs.geckoboard.com/api/custom-widgets.html
+http://docs.geckoboard.com/api/custom-charts.html
+
+#Map
+```js
+var bar = foo.map('map_widget_key');
+bar.send(items, function(response){
+  //callback with response from geckoboard
+})
+```
+
+Items is an Array of Objects
+
+```js
+[
+  {
+    city: {
+      city_name: "london",
+      country_code: "GB",
+      region_code: "P5",
+    },
+    size: 8, /*Optional. Default = 3 */
+    color: "d8f709", /*Optional. Hex color.*/
+    cssclass: "mycss" /*Optional. See example CSS below. */
+  },
+  {
+    city: {
+      city_name: "San Francisco",
+      region_code: "CA",
+      country_code: "US"
+    }
+  },
+  {
+    latitude: "51.526263",
+    longitude: "-0.092429"
+  },
+  {
+    latitude: "-33.94336",
+    longitude: "18.896484"
+  },
+  {
+    host: "geckoboard.com"
+  },
+  {
+    ip: "178.125.193.227"
+  }
+]
+```
+
+#Number
+```js
+var bar = foo.number('number_widget_key');
+bar.send(items, absolute, type, function(response){
+  //callback with response from geckoboard
+});
+```
+Items is an Array of Objects
+```js
+[
+  { 
+    text : "Some Text",
+    value : 123 
+  },
+  {
+    text : "Some more Text",
+    value : 238
+    prefix: "&pound;"
+  }
+] 
+```
+Absolute allows you to show numerical differences instead of Percentage based - defaults to `false`, can be set to true
+Type allows you to reverse the colours - defaults to `standard`, set to reverse or standard
+
+#Text
+```js
+var bar = foo.text('text_widget_key');
+bar.send(items, function(response){
+  //callback with response from geckoboard
+});
+```
+Items is an Array of Objects
+```js
+[
+  {text: "message c", type : 0},
+  {text : "message d", type : 2},
+  {text : "message e", type : 1}
+]
+```
+Type has three different values:
+* 0=None (no corner icon)
+* 1=Alert (yellow corner icon)
+* 2=Info (grey corner icon)
+
+There can be up to 10 of these Objects
+The text can be plain or styled HTML
+
+#Bullet
+```js
+var bar = foo.bullet('bullet_widget_key');
+bar.send(items, orientation, function(response){
+  //callback with response from geckoboard
+});
+```
+
+#Rag Column
+```js
+var bar = foo.ragColumn('rag_column_widget_key');
+bar.send(items, type, function(response){
+  //callback with response from geckoboard
+})
+```
+
+#Rag
+```js
+var bar = foo.rag('rag_widget_key');
+bar.send(items, type, function(response){
+  //callback with response from geckoboard
+})
+```
+
+#Funnel
+```js
+var bar = foo.funnel('funnel_widget_key');
+foo.send(items, type, percentage, function(response){
+  //callback with response from geckoboard
+})
+```
+
+#Pie
+```js
+var bar = foo.pie('pie_widget_key');
+bar.send(items, function(response){
+  //callback with response from geckoboard
+})
+```
+
+#Gecko Meter
+```js
+var bar = foo.geckoMeter('gecko_meter_widget_key');
+bar.send(value, min, max, type, function(response){
+  //callback with response from geckoboard
+})
+```
+
+#Line
+```js
+var bar = foo.line('line_widget_key');
+bar.send(items, settings, function(response){
+  //callback with response from geckoboard
+})
+```
 
 
+##Examples
+
+```js
 var map = gecko.map('map_widget_key');
 map.send([
   { 
@@ -29,7 +197,7 @@ var number = gecko.number('number_widget_key');
 number.send([ 
   { text : "Visitors",value : 300},
   { text : "",value : 280}
-], function(response){
+], true, 'reverse', function(response){
   console.log('number', response);
 });
 
@@ -246,7 +414,6 @@ geckometer.send(
   function(response){
   console.log('geckometer', response)
 })
-
 
 var line = gecko.line('line_widget_key');
 line.send([
