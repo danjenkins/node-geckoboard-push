@@ -2,7 +2,7 @@
   "author": "Dan Jenkins <dan.jenkins@holidayextras.com> (http://www.holidayextras.co.uk/)",
   "name": "geckoboard-push",
   "description": "Send data to Geckoboard via their new push API",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/danjenkins/node-geckoboard-push.git"
@@ -14,5 +14,7 @@
   ],
   "engines": {
     "node": "*"
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
