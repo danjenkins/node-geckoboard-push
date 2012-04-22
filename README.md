@@ -147,7 +147,7 @@ bar.send(items, type, function(response){
 })
 ```
 
-#Funnel
+###Funnel###
 ```js
 var bar = foo.funnel('funnel_widget_key');
 foo.send(items, type, percentage, function(response){
@@ -155,7 +155,7 @@ foo.send(items, type, percentage, function(response){
 })
 ```
 
-#Pie
+###Pie###
 ```js
 var bar = foo.pie('pie_widget_key');
 bar.send(items, function(response){
@@ -163,7 +163,7 @@ bar.send(items, function(response){
 })
 ```
 
-#Gecko Meter
+###Gecko Meter###
 ```js
 var bar = foo.geckoMeter('gecko_meter_widget_key');
 bar.send(value, min, max, type, function(response){
@@ -171,7 +171,7 @@ bar.send(value, min, max, type, function(response){
 })
 ```
 
-#Line
+###Line###
 ```js
 var bar = foo.line('line_widget_key');
 bar.send(items, settings, function(response){
@@ -180,7 +180,7 @@ bar.send(items, settings, function(response){
 ```
 
 
-##Examples
+##Examples##
 
 ```js
 var map = gecko.map('map_widget_key');
@@ -457,12 +457,12 @@ line.send([
 })
 ```
 
-## NPM Maintainers
+##NPM Maintainers##
 
 The npm module for this library is maintained by:
 
 * [Dan Jenkins](http://github.com/danjenkins)
 
-## License
+##License##
 
 geckoboard-push is licensed under the MIT license.
