@@ -36,7 +36,7 @@ Details of types can be found at geckoboards docs:
 ###Map###
 ```js
 var bar = foo.map('map_widget_key');
-bar.send(items, function(response){
+bar.send(items, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -82,7 +82,7 @@ Items is an Array of Objects
 ###Number###
 ```js
 var bar = foo.number('number_widget_key');
-bar.send(items, absolute, type, function(response){
+bar.send(items, absolute, type, function(err, response){
   //callback with response from geckoboard
 });
 ```
@@ -106,7 +106,7 @@ Type allows you to reverse the colours - defaults to `standard`, set to `reverse
 ###Text###
 ```js
 var bar = foo.text('text_widget_key');
-bar.send(items, function(response){
+bar.send(items, function(err, response){
   //callback with response from geckoboard
 });
 ```
@@ -129,7 +129,7 @@ The text can be plain or styled HTML
 ###Bullet###
 ```js
 var bar = foo.bullet('bullet_widget_key');
-bar.send(items, orientation, function(response){
+bar.send(items, orientation, function(err, response){
   //callback with response from geckoboard
 });
 ```
@@ -186,7 +186,7 @@ Orientation is the orientation you'd like the bullet widgets, default is `horizo
 ###Rag Column###
 ```js
 var bar = foo.ragColumn('rag_column_widget_key');
-bar.send(items, type, function(response){
+bar.send(items, type, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -212,7 +212,7 @@ Type allows you to reverse the colours - defaults to `standard`, set to `reverse
 ###Rag###
 ```js
 var bar = foo.rag('rag_widget_key');
-bar.send(items, type, function(response){
+bar.send(items, type, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -239,7 +239,7 @@ Type allows you to reverse the colours - defaults to `standard`, set to `reverse
 ###Funnel###
 ```js
 var bar = foo.funnel('funnel_widget_key');
-foo.send(items, type, percentage, function(response){
+foo.send(items, type, percentage, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -286,7 +286,7 @@ Percentage allows you to show or hide % - defaults to `show`, set to `show` or `
 ###Pie###
 ```js
 var bar = foo.pie('pie_widget_key');
-bar.send(items, function(response){
+bar.send(items, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -320,7 +320,7 @@ The last 2 digits in the hex colour attribute are entirely optional and represen
 ###Gecko Meter###
 ```js
 var bar = foo.geckoMeter('gecko_meter_widget_key');
-bar.send(value, min, max, type, function(response){
+bar.send(value, min, max, type, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -344,7 +344,7 @@ Type allows you to reverse the colours - defaults to `standard`, set to `reverse
 ###Line###
 ```js
 var bar = foo.line('line_widget_key');
-bar.send(items, settings, function(response){
+bar.send(items, settings, function(err, response){
   //callback with response from geckoboard
 })
 ```
@@ -406,7 +406,7 @@ map.send([
     longitude: 1.0000,
     size: 10
   }
-], function(response){
+], function(err, response){
   console.log('map', response);
 })
 
@@ -414,7 +414,7 @@ var number = gecko.number('number_widget_key');
 number.send([ 
   { text : "Visitors",value : 300},
   { text : "",value : 280}
-], true, 'reverse', function(response){
+], true, 'reverse', function(err, response){
   console.log('number', response);
 });
 
@@ -423,7 +423,7 @@ text.send([
   {text: "message c", type : 0},
   {text : "message d", type : 2},
   {text : "message e", type : 1}
-], function(response){
+], function(err, response){
   console.log('text', response);
 });
 
@@ -512,7 +512,7 @@ bullet.send([{
   comparative: {
     point: 600
   }
-}],'vertical', function(response){
+}],'vertical', function(err, response){
   console.log('bullet', response);
 });
 
@@ -530,7 +530,7 @@ ragColumn.send([
     value: 5,
     text: "Green description"
   }
-], 'reverse',function(response){
+], 'reverse',function(err, response){
   console.log('rag column', response);
 })
 
@@ -548,7 +548,7 @@ rag.send([
     value: 3,
     text: "Green description"
   }
-], 'standard', function(response){
+], 'standard', function(err, response){
   console.log('RAG', response);
 })
 
@@ -586,7 +586,7 @@ funnel.send([
     value: "2323", 
     label: "Step 8" 
   } 
-], 'standard','show', function(response){
+], 'standard','show', function(err, response){
   console.log('Funnel', response);
 })
 
@@ -612,7 +612,7 @@ pie.send([
     label: "August", 
     colour: "FF0000AA" 
   } 
-], function(response){
+], function(err, response){
   console.log('pie', response);
 })
 
@@ -628,7 +628,7 @@ geckometer.send(
     value: "30"
   },
   'reverse',
-  function(response){
+  function(err, response){
   console.log('geckometer', response)
 })
 
@@ -668,7 +668,7 @@ line.send([
     "Max"
   ],
   "colour": "ff9900"
-}, function(response){
+}, function(err, response){
   console.log('Line', response);
 })
 ```
