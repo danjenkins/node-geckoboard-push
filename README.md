@@ -30,8 +30,8 @@ var foo = new Geckoboard({api_key: 'geckoboard_api_key'});
 
 Details of types can be found at geckoboards docs:
 
-* http://docs.geckoboard.com/api/custom-widgets.html
-* http://docs.geckoboard.com/api/custom-charts.html
+* http://www.geckoboard.com/developers/custom-widgets/widget-types/
+* http://www.geckoboard.com/developers/widget-editor/advanced/
 
 ###Map###
 ```js
@@ -351,6 +351,51 @@ bar.send(items, settings, function(err, response){
 Items is an Array of values
 ```js
 [
+    {
+        "label": {
+            "name": "Label1",
+            "color": "#d4e1aa"
+        },
+        "title": {
+            "text": "Important information 1",
+            "highlight": true
+        },
+        "description": "A small description"
+    },
+    {
+        "title": {
+            "text": "Important information 2",
+            "highlight": true
+        }
+    }
+]
+```
+Settings is an Object which contains x and y axis detail and colour detail in hex format
+```js
+{
+  "axisx": [
+    "Jun",
+    "Jul",
+    "Aug"
+  ],
+  "axisy": [
+    "Min",
+    "Max"
+  ],
+  "colour": "ff9900"
+}
+```
+
+###List###
+```js
+var bar = foo.list('list_widget_key');
+bar.send(items, settings, function(err, response){
+  //callback with response from geckoboard
+})
+```
+Items is an Array of values
+```js
+[
   "12.3",
   "2.3",
   "10",
@@ -375,21 +420,7 @@ Items is an Array of values
   "7"
 ]
 ```
-Settings is an Object which contains x and y axis detail and colour detail in hex format
-```js
-{
-  "axisx": [
-    "Jun",
-    "Jul",
-    "Aug"
-  ],
-  "axisy": [
-    "Min",
-    "Max"
-  ],
-  "colour": "ff9900"
-}
-```
+
 
 ##Examples##
 
