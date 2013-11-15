@@ -421,6 +421,28 @@ Items is an Array of values
 ]
 ```
 
+###Highchart###
+```js
+var bar = foo.highchart('highchart_widget_key');
+bar.send(highchart, function(err, response){
+  //callback with response from geckoboard
+})
+```
+highchart is a Highchart configuration object - see: http://www.geckoboard.com/developers/custom-widgets/widget-types/highcharts/
+```js
+{
+  chart: {
+    renderTo: 'container'
+  },
+  credits: {
+    enabled: false
+  },
+  series: {
+    your_stuff
+  }
+}
+```
+
 
 ##Examples##
 
@@ -699,6 +721,38 @@ line.send([
     "Max"
   ],
   "colour": "ff9900"
+}, function(err, response){
+  console.log('Line', response);
+})
+
+var highchart = gecko.highchart('line_widget_key');
+highchart.send({
+  chart: { type: 'bar' },
+  title: { text: 'Unique visits by Country' },
+  subtitle: { text: 'Today' },
+  xAxis: {
+    categories: ['USA', 'Canada', 'France', 'Australia', 'Germany'],
+    title: { text: null }
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Visits',
+      align: 'high'
+    },
+    labels: { overflow: 'justify' }
+  },
+  tooltip: { valueSuffix: null },
+  plotOptions: {
+    bar: {
+      dataLabels: { enabled: true }
+    }
+  },
+  credits: { enabled: false },
+  series: [{
+    name: 'Visits',
+    data: [107, 31, 635, 203, 2]
+  }]
 }, function(err, response){
   console.log('Line', response);
 })
