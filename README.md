@@ -79,6 +79,16 @@ Items is an Array of Objects
 ]
 ```
 
+###Monitoring###
+
+```js
+var bar = foo.monitoring('number_widget_key');
+bar.send(status, downTime, responseTime, function(err, response){
+  //callback with response from geckoboard
+});
+```
+status can have the values 'Up' and 'Down', downTime and responseTime are optional
+
 ###Number###
 ```js
 var bar = foo.number('number_widget_key');
