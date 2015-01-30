@@ -768,6 +768,37 @@ highchart.send({
 })
 ```
 
+###Leaderboard###
+```js
+var bar = foo.leaderboard('leaderboard_widget_key');
+bar.send(items, format, unit, function(err, response){
+  //callback with response from geckoboard
+})
+```
+Items is an Array of values
+```js
+[
+    {
+        "label": "Something gaining",
+        "value": 100,
+        "previous_rank": 3,
+    },
+    {
+        "label": "Something staying",
+        "value": 90
+    },
+    {
+        "label": "Something losing",
+        "value": 80,
+        "previous_rank": 1
+    }
+]
+```
+
+Format allows you to optionally change the number format.  Defaults to decimal.
+
+Unit is a ISO 4217 currency code.  Required when format is currency.
+
 ##NPM Maintainers##
 
 The npm module for this library is maintained by:
