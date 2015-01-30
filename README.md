@@ -396,6 +396,33 @@ Settings is an Object which contains x and y axis detail and colour detail in he
 }
 ```
 
+###Leaderboard###
+```js
+var bar = foo.leaderboard('leaderboard_widget_key');
+bar.send(items, function(err, response){
+  //callback with response from geckoboard
+})
+```
+Items is an Array of values
+```js
+[
+    {
+        "label": "Something gaining",
+        "value": 100,
+        "previous_rank": 3,
+    },
+    {
+        "label": "Something staying",
+        "value": 90
+    },
+    {
+        "label": "Something losing",
+        "value": 80,
+        "previous_rank": 1
+    }
+]
+```
+
 ###List###
 ```js
 var bar = foo.list('list_widget_key');
