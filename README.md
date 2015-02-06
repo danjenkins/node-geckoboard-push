@@ -217,7 +217,7 @@ Items is an array of Objects
   }
 ]
 ```
-Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+The type parameter accepts one value `reverse`. If supplied then the order of the items will be reversed.
 
 ###Rag###
 ```js
@@ -243,7 +243,7 @@ Items is an array of Objects
   }
 ]
 ```
-Type allows you to reverse the colours - defaults to `standard`, set to `reverse` or `standard`
+The type parameter accepts one value `reverse`. If supplied then the order of the items will be reversed.
 
 
 ###Funnel###
