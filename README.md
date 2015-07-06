@@ -399,35 +399,47 @@ Settings is an Object which contains x and y axis detail and colour detail in he
 ###List###
 ```js
 var bar = foo.list('list_widget_key');
-bar.send(items, settings, function(err, response){
+bar.send(items, function(err, response){
   //callback with response from geckoboard
 })
 ```
-Items is an Array of values
+Items is an Array of values as defined by the [Geckoboard API](https://developer.geckoboard.com/#list)
 ```js
 [
-  "12.3",
-  "2.3",
-  "10",
-  "15",
-  "15",
-  "13",
-  "12.1",
-  "9.8",
-  "12.3",
-  "2.3",
-  "10",
-  "15",
-  "15",
-  "13",
-  "12.1",
-  "9.8",
-  "11",
-  "16",
-  "15",
-  "13",
-  "10",
-  "7"
+  {
+    "title": {
+      "text": "Chrome"
+    },
+    "label": {
+      "name": "New!",
+      "color": "#ff2015"
+    },
+    "description": "40327 visits"
+  },
+  {
+    "title": {
+      "text": "Safari"
+    },
+    "description": "11577 visits"
+  },
+  {
+    "title": {
+      "text": "Firefox"
+    },
+    "description": "10296 visits"
+  },
+  {
+    "title": {
+      "text": "Internet Explorer"
+    },
+    "description": "3587 visits"
+  },
+  {
+    "title": {
+      "text": "Opera"
+    },
+    "description": "499 visits"
+  }
 ]
 ```
 
