@@ -396,6 +396,45 @@ Settings is an Object which contains x and y axis detail and colour detail in he
 }
 ```
 
+###LineV2###
+
+```js
+var linev2 = foo.linev2('linev2_widget_key');
+linev2.send(data, function(err, response){
+  //callback with response from geckoboard
+})
+```
+
+data is an object as definbed by the [Geckoboard API](https://developer.geckoboard.com/#line-chart)
+
+```js
+{
+  "y_axis": {
+    "format": "currency",
+    "unit": "USD"
+  },
+  "series": [
+    {
+      "name": "GBP -> USD",
+      "data": [
+        1.62529,
+        1.56991,
+        1.50420,
+        1.52265,
+        1.55356,
+        1.51930,
+        1.52148,
+        1.51173,
+        1.55170,
+        1.61966,
+        1.59255,
+        1.63762
+      ]
+    }
+  ]
+}
+```
+
 ###List###
 ```js
 var bar = foo.list('list_widget_key');
