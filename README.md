@@ -1,5 +1,5 @@
 #geckoboard-push#
-
+#### NodeJS implemenation of the Geckoboard legacy api, this has been replaced with a a new [DataSets API](https://developer.geckoboard.com)####
 ##Install##
 
 ```
