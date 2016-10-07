@@ -1,5 +1,5 @@
 #geckoboard-push#
-#### NodeJS implemenation of the Geckoboard legacy api, this has been replaced with a a new [DataSets API](https://developer.geckoboard.com)####
+#### NodeJS implemenation of the Geckoboard legacy API, this has been replaced with a a new [DataSets API](https://developer.geckoboard.com)####
 ##Install##
 
 ```
@@ -405,7 +405,7 @@ linev2.send(data, function(err, response){
 })
 ```
 
-data is an object as definbed by the [Geckoboard API](https://developer.geckoboard.com/#line-chart)
+data is an object as definined by the [Geckoboard API](https://developer.geckoboard.com/#line-chart)
 
 ```js
 {
@@ -855,7 +855,7 @@ bar.send(data, function(err, response){
 })
 ```
 
-data is an object as definbed by the [Geckoboard API](https://developer-custom.geckoboard.com/#bar-chart)
+data is an object as definined by the [Geckoboard API](https://developer-custom.geckoboard.com/#bar-chart)
 
 ```js
 {
