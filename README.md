@@ -1,5 +1,5 @@
 #geckoboard-push#
-
+#### NodeJS implementation of the Geckoboard legacy API, this has been replaced with a a new [DataSets API](https://developer.geckoboard.com)####
 ##Install##
 
 ```
@@ -105,7 +105,7 @@ Items is an Array of Objects
   },
   {
     text : "Some more Text",
-    value : 238
+    value : 238,
     prefix: "&pound;"
   }
 ] 
@@ -405,7 +405,7 @@ linev2.send(data, function(err, response){
 })
 ```
 
-data is an object as definbed by the [Geckoboard API](https://developer.geckoboard.com/#line-chart)
+data is an object as definined by the [Geckoboard API](https://developer.geckoboard.com/#line-chart)
 
 ```js
 {
@@ -844,6 +844,48 @@ Items is an Array of values
         "previous_rank": 1
     }
 ]
+```
+
+###Bar###
+
+```js
+var barChart = foo.barchart('bar_widget_key');
+bar.send(data, function(err, response){
+  //callback with response from geckoboard
+})
+```
+
+data is an object as definined by the [Geckoboard API](https://developer-custom.geckoboard.com/#bar-chart)
+
+```js
+{
+  "x_axis": {
+    "labels": [
+      "2000",
+      "2001",
+      "2002",
+      "2003",
+      "2004",
+      "2005"
+    ]
+  },
+  "y_axis": {
+    "format": "currency",
+    "unit": "USD"
+  },
+  "series": [
+    {
+      "data": [
+        1000,
+        1500,
+        30600,
+        28800,
+        22300,
+        36900
+      ]
+    }
+  ]
+}
 ```
 
 Format allows you to optionally change the number format.  Defaults to decimal.
